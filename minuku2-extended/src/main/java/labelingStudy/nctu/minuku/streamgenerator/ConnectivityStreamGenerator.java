@@ -42,10 +42,10 @@ public class ConnectivityStreamGenerator extends AndroidStreamGenerator<Connecti
     private ConnectivityDataRecordDAO connectivityDataRecordDAO;
     public static String NETWORK_TYPE_WIFI = "Wifi";
     public static String NETWORK_TYPE_MOBILE = "Mobile";
-    private static boolean mIsNetworkAvailable = false;
-    private static boolean mIsConnected = false;
-    private static boolean mIsWifiAvailable = false;
-    private static boolean mIsMobileAvailable = false;
+    public static boolean mIsNetworkAvailable = false;
+    public static boolean mIsConnected = false;
+    public static boolean mIsWifiAvailable = false;
+    public static boolean mIsMobileAvailable = false;
     public static boolean mIsWifiConnected = false;
     public static boolean mIsMobileConnected = false;
 

@@ -89,6 +89,7 @@ public class AppUsageStreamGenerator extends AndroidStreamGenerator<AppUsageData
     private static String mRecentUsedAppsInLastHour= "NA";
 
     //screen on and off
+    private static String sScreen_Status = "NA";
     private String Screen_Status;
     private static final String STRING_SCREEN_OFF = "Screen_off";
     private static final String STRING_SCREEN_ON = "Screen_on";
@@ -453,8 +454,22 @@ public class AppUsageStreamGenerator extends AndroidStreamGenerator<AppUsageData
         }
 
         Log.e(TAG, "test source being requested [testing app] SCREEN:  " + Screen_Status);
+        sScreen_Status = Screen_Status;
 
         return Screen_Status;
     }
+
+    public static String getmLastestForegroundActivity() {
+        return mLastestForegroundActivity;
+    }
+
+    public static String getmLastestForegroundPackage() {
+        return mLastestForegroundPackage;
+    }
+
+    public static String getScreen_Status() {
+        return sScreen_Status;
+    }
+
 
 }

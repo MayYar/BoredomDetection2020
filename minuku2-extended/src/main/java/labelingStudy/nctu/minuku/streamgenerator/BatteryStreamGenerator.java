@@ -214,4 +214,20 @@ public class BatteryStreamGenerator extends AndroidStreamGenerator<BatteryDataRe
             }
         }
     };
+
+    public static int getmBatteryLevel() {
+        return mBatteryLevel;
+    }
+
+    public static float getmBatteryPercentage() {
+        return mBatteryPercentage;
+    }
+
+    public static String getmBatteryChargingState() {
+        return mBatteryChargingState;
+    }
+
+    public static boolean isIsCharging() {
+        return isCharging;
+    }
 }

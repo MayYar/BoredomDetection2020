@@ -37,9 +37,9 @@ public class Constants {
 
     public static final String ACTION_CONNECTIVITY_CHANGE = "CONNECTIVITY_CHANGE";
 
-    public static final String ONGOING_CHANNEL_NAME = "LS";
-    public static final String ONGOING_CHANNEL_ID = "LabelingStudy_id";
-    public static final String SURVEY_CHANNEL_NAME = "LS";
+    public static final String ONGOING_CHANNEL_NAME = "BD";
+    public static final String ONGOING_CHANNEL_ID = "BoredomDetection_id";
+    public static final String SURVEY_CHANNEL_NAME = "BD";
     public static final String SURVEY_CHANNEL_ID = "Survey_id";
 
     public static final String CHECK_SERVICE_ACTION = "checkService";
@@ -137,8 +137,8 @@ public class Constants {
     //specific queue sizes
     public static final int LOCATION_QUEUE_SIZE = 50;
 
-    public static final String APP_NAME = "LS";
-    public static final String APP_FULL_NAME = "Labeling Study";
+    public static final String APP_NAME = "BD";
+    public static final String APP_FULL_NAME = "Boredom Detection";
     public static final String RUNNING_APP_DECLARATION = "正在執行 "+ APP_FULL_NAME;
     public static final long INTERNAL_LOCATION_UPDATE_FREQUENCY = 1 * 10 * 1000; // 1 * 300 * 1000
     public static final long INTERNAL_LOCATION_LOW_UPDATE_FREQUENCY = 1 * 60 * 1000; // 1 * 300 * 1000
@@ -172,4 +172,6 @@ public class Constants {
     public static final String ACTIVITY_CONFIDENCE_CONNECTOR = ":";
 
     public static int NOTIFICATION_UPDATE_THREAD_SIZE = 1;
+
+    public static String BUTTON_PRIVATE = "private";
 }

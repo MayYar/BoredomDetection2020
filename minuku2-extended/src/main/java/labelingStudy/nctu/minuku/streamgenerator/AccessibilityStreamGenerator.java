@@ -44,6 +44,33 @@ public class AccessibilityStreamGenerator extends AndroidStreamGenerator<Accessi
 
     private long detectedTime;
 
+    private static String s_pack;
+    private static String s_text;
+    private static String s_type;
+    private static String s_extra;
+
+    private static long s_detectedTime;
+
+    public static String getPack() {
+        return s_pack;
+    }
+
+    public static String getText() {
+        return s_text;
+    }
+
+    public static String getType() {
+        return s_type;
+    }
+
+    public static String getExtra() {
+        return s_extra;
+    }
+
+    public static long getDetectedTime() {
+        return s_detectedTime;
+    }
+
     private SharedPreferences sharedPrefs;
 
     public AccessibilityStreamGenerator(Context applicationContext){
@@ -136,6 +163,12 @@ public class AccessibilityStreamGenerator extends AndroidStreamGenerator<Accessi
             e.printStackTrace();
             return false;
         }
+
+        s_detectedTime = detectedTime;
+        s_extra = extra;
+        s_pack = pack;
+        s_text = text;
+        s_type = type;
 
         return false;
     }

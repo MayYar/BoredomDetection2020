@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.techfreak:wizardpager:1.0.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/wizardpager-1.0.0.aar/30ccf0ddd3aff8b32a4ae31f6abbc53b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/wizardpager-1.0.0.aar/30ccf0ddd3aff8b32a4ae31f6abbc53b/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.techfreak/wizardpager/1.0.0/b22b02c95eed5bf8895723c8542432dbbb0e9599/wizardpager-1.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.techfreak/wizardpager/1.0.0/b4442cc1923fa047d18110ed6918c55a7ea1b44e/wizardpager-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -55,6 +55,13 @@ public class TelephonyStreamGenerator extends AndroidStreamGenerator<TelephonyDa
     private Context mContext;
     private SharedPreferences sharedPrefs;
 
+    private static String sNetworkOperatorName;
+    private static int sCallState;
+    private static int sPhoneSignalType;
+    private static int sLTESignalStrength_dbm;
+    private static int sGsmSignalStrength;
+    private static int sCdmaSignalStrengthLevel;
+
     public TelephonyStreamGenerator (Context applicationContext) {
 
         super(applicationContext);
@@ -133,6 +140,13 @@ public class TelephonyStreamGenerator extends AndroidStreamGenerator<TelephonyDa
             return false;
         }
 
+        sCallState = mCallState;
+        sCdmaSignalStrengthLevel = mCdmaSignalStrengthLevel;
+        sGsmSignalStrength = mGsmSignalStrength;
+        sLTESignalStrength_dbm = mLTESignalStrength_dbm;
+        sNetworkOperatorName = mNetworkOperatorName;
+        sPhoneSignalType = mPhoneSignalType;
+
         return true;
     }
 
@@ -180,10 +194,14 @@ public class TelephonyStreamGenerator extends AndroidStreamGenerator<TelephonyDa
             if (telephonyManager.getNetworkType() == NETWORK_TYPE_LTE){
                 mPhoneSignalType = NETWORK_TYPE_LTE;
                 Log.d(TAG, String.valueOf(mPhoneSignalType));
-                dbm = Integer.parseInt(parts[10]);
-                //asu = 140 + dbm;
-                mLTESignalStrength_dbm = dbm;
-                //LTESignalStrength_asu = asu;
+                try {
+                    dbm = Integer.parseInt(parts[10]);
+                    //asu = 140 + dbm;
+                    mLTESignalStrength_dbm = dbm;
+                    //LTESignalStrength_asu = asu;
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
             }
             /** Else GSM 3G */
             else if (sStrength.isGsm()) {
@@ -250,5 +268,29 @@ public class TelephonyStreamGenerator extends AndroidStreamGenerator<TelephonyDa
     @Override
     public void offer(TelephonyDataRecord dataRecord) {
         mStream.add(dataRecord);
+    }
+
+    public static int getmCallState() {
+        return sCallState;
+    }
+
+    public static int getmPhoneSignalType() {
+        return sPhoneSignalType;
+    }
+
+    public static int getmLTESignalStrength_dbm() {
+        return sLTESignalStrength_dbm;
+    }
+
+    public static int getmGsmSignalStrength() {
+        return sGsmSignalStrength;
+    }
+
+    public static int getmCdmaSignalStrengthLevel() {
+        return sCdmaSignalStrengthLevel;
+    }
+
+    public static String getmNetworkOperatorName() {
+        return sNetworkOperatorName;
     }
 }

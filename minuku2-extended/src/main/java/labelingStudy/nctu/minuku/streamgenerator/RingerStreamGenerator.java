@@ -56,6 +56,14 @@ public class RingerStreamGenerator extends AndroidStreamGenerator<RingerDataReco
     private int mStreamVolumeRing = -9999;
     private int mStreamVolumeVoicecall = -9999;
     private int mStreamVolumeSystem = -9999;
+
+    private static String sRingerMode = "NA";
+    private static String sAudioMode = "NA";
+    private static int sStreamVolumeMusic = -9999;
+    private static int sStreamVolumeNotification = -9999;
+    private static int sStreamVolumeRing = -9999;
+    private static int sStreamVolumeVoicecall = -9999;
+    private static int sStreamVolumeSystem = -9999;
 //    private static int mStreamVolumeDTMF = -9999;
 
     private static AudioManager mAudioManager;
@@ -139,6 +147,14 @@ public class RingerStreamGenerator extends AndroidStreamGenerator<RingerDataReco
             e.printStackTrace();
             return false;
         }
+
+        sAudioMode = mAudioMode;
+        sRingerMode = mRingerMode;
+        sStreamVolumeMusic = mStreamVolumeMusic;
+        sStreamVolumeNotification = mStreamVolumeNotification;
+        sStreamVolumeRing = mStreamVolumeRing;
+        sStreamVolumeSystem = mStreamVolumeSystem;
+        sStreamVolumeVoicecall = mStreamVolumeVoicecall;
 
         return true;
     }
@@ -241,4 +257,31 @@ public class RingerStreamGenerator extends AndroidStreamGenerator<RingerDataReco
         mStream.add(ringerdataRecord);
     }
 
+    public static String getmRingerMode() {
+        return sRingerMode;
+    }
+
+    public static String getmAudioMode() {
+        return sAudioMode;
+    }
+
+    public static int getmStreamVolumeMusic() {
+        return sStreamVolumeMusic;
+    }
+
+    public static int getmStreamVolumeNotification() {
+        return sStreamVolumeNotification;
+    }
+
+    public static int getmStreamVolumeRing() {
+        return sStreamVolumeRing;
+    }
+
+    public static int getmStreamVolumeSystem() {
+        return sStreamVolumeSystem;
+    }
+
+    public static int getmStreamVolumeVoicecall() {
+        return sStreamVolumeVoicecall;
+    }
 }

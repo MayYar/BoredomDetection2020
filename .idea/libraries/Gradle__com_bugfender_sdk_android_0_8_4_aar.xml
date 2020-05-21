@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.bugfender.sdk:android:0.8.4@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-0.8.4.aar/a82e9e48a361202309ff8086ffd0c309/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-0.8.4.aar/a82e9e48a361202309ff8086ffd0c309/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.bugfender.sdk/android/0.8.4/4012defcd113cd1c571eabdb4c9baa6425566a17/android-0.8.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

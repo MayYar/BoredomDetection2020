@@ -243,6 +243,8 @@ public class ActivityRecognitionStreamGenerator extends AndroidStreamGenerator<A
                 return false;
             }
         }
+
+
         return true;
     }
 
@@ -554,5 +556,17 @@ public class ActivityRecognitionStreamGenerator extends AndroidStreamGenerator<A
                 return STRING_DETECTED_ACTIVITY_NA;
         }
         return "NA";
+    }
+
+    public static List<DetectedActivity> getsProbableActivities() {
+        return sProbableActivities;
+    }
+
+    public static DetectedActivity getsMostProbableActivity() {
+        return sMostProbableActivity;
+    }
+
+    public static long getsLatestDetectionTime() {
+        return sLatestDetectionTime;
     }
 }

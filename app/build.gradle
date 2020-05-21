@@ -66,23 +66,23 @@ dependencies {
     // Tag library
 
 
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.android.support:design:25.1.0'
-    compile 'com.google.guava:guava:19.0'
-    compile 'com.github.boxme:squarecamera:1.1.0'
-    compile 'com.h6ah4i.android.compat:mulsellistprefcompat:1.0.0'
-    compile 'com.github.dkharrat.nexusdialog:nexusdialog:0.4.0'
-    compile 'com.google.code.gson:gson:2.7'
-    compile 'de.hdodenhof:circleimageview:2.1.0'
-    compile 'com.instabug.library:instabug:2.+'
-    compile 'me.gujun.android.taggroup:library:1.4@aar'
-    compile 'com.github.techfreak:wizardpager:1.0.0'
-    compile 'com.android.support:cardview-v7:24.0.0'
-    compile 'com.android.support:recyclerview-v7:24.0.0'
-    compile 'com.google.android.gms:play-services-maps:9.2.1'
-    compile 'com.android.support:multidex-instrumentation:1.0.2'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.github.vipulasri:timelineview:1.0.5'
+    implementation 'com.android.support:appcompat-v7:26.1.0' //24.2.0
+    implementation 'com.android.support:design:25.1.0'
+    implementation 'com.google.guava:guava:19.0'
+    implementation 'com.github.boxme:squarecamera:1.1.0'
+    implementation 'com.h6ah4i.android.compat:mulsellistprefcompat:1.0.0'
+    implementation 'com.github.dkharrat.nexusdialog:nexusdialog:0.4.0'
+    implementation 'com.google.code.gson:gson:2.7'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'com.instabug.library:instabug:2.+'
+    implementation 'me.gujun.android.taggroup:library:1.4@aar'
+    implementation 'com.github.techfreak:wizardpager:1.0.0'
+    implementation 'com.android.support:cardview-v7:24.0.0'
+//    compile 'com.android.support:recyclerview-v4:26.0.0'
+    implementation 'com.google.android.gms:play-services-maps:9.2.1'
+    implementation 'com.android.support:multidex-instrumentation:1.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.github.vipulasri:timelineview:1.0.5'
     testCompile 'junit:junit:4.12'
     compile('com.crashlytics.sdk.android:crashlytics:2.9.1@aar') {
         transitive = true;
@@ -90,6 +90,20 @@ dependencies {
     compile('com.crashlytics.sdk.android:crashlytics-ndk:2.0.2@aar') {
         transitive = true;
     }
+
+    implementation 'com.firebase:firebase-client-android:2.3.1'
+
+    implementation 'com.google.firebase:firebase-auth:9.0.0'
+    implementation 'com.google.firebase:firebase-storage:9.0.0'
+    implementation 'com.google.firebase:firebase-database:9.0.0'
+
+//    implementation 'com.github.bumptech.glide:glide:4.9.0'
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation("com.github.bumptech.glide:glide:4.9.0") {
+        exclude group: "com.android.support"
+    }
+    implementation "com.android.support:support-fragment:26.1.0"
+    implementation 'com.android.support:recyclerview-v7:24.2.0'
 
 
 }
@@ -107,4 +121,15 @@ crashlytics {
     enableNdk true
     androidNdkOut 'src/main/obj'
     androidNdkLibsOut 'src/main/libs'
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '25.3.0'
+            }
+        }
+    }
 }
